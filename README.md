@@ -13,3 +13,5 @@
  - [x]  **git commit -m** "CSS változtatást"
  - [x] **git remote add origi** https://github.com/Tory05/Vizsga.git
  - [x] **git push** origi console
+
+ (╯°□°)╯︵ ┻━┻
