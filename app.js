@@ -18,7 +18,7 @@ loadSong(songs[songIndex]);
 
 
 //Frissítjük a zenék adatait
-function loadSong(song){
+function loadSong(song) {
 
     title.innerText = song;
     audio.src = `music/${song}.mp3`;
@@ -26,7 +26,7 @@ function loadSong(song){
 }
 
 //Zene lejátszása
-function playSong(){
+function playSong() {
 
     musicContainer.classList.add("play");
     playBtn.querySelector("i.fas").classList.remove("fa-play");
@@ -36,7 +36,7 @@ function playSong(){
 }
 
 //Zene megállíátsa
-function pauseSong(){
+function pauseSong() {
 
     musicContainer.classList.remove("play");
     playBtn.querySelector("i.fas").classList.add("fa-play");
@@ -47,11 +47,11 @@ function pauseSong(){
 }
 
 //Zene léptetése előre
-function nextSong(){
+function nextSong() {
 
     songIndex++;
 
-    if(songIndex > songs.length -1){
+    if (songIndex > songs.length - 1) {
 
         songIndex = 0;
     }
@@ -61,13 +61,13 @@ function nextSong(){
 }
 
 //Zene léptetése vissza
-function prevSong(){
+function prevSong() {
 
     songIndex--;
 
-    if(songIndex < 0){
+    if (songIndex < 0) {
 
-        songIndex = songs.length -1;
+        songIndex = songs.length - 1;
     }
 
     loadSong(songs[songIndex]);
@@ -76,16 +76,15 @@ function prevSong(){
 
 
 //Zene lejátszása - eseménykezelés
-playBtn.addEventListener("click", function(){
+playBtn.addEventListener("click", function() {
 
     const isPlaying = musicContainer.classList.contains("play");
 
-   if(isPlaying){
+    if (isPlaying) {
         pauseSong();
-   }
-   else{
+    } else {
         playSong();
-   }
+    }
 })
 
 //Zene léptetése - eseménykezelés
@@ -95,4 +94,6 @@ prevBtn.addEventListener("click", prevSong);
 //Ha a zene végetért lépjen a következőre
 audio.addEventListener("ended", nextSong);
 
-
+window.onload = (event) => {
+    console.log('Betöltés kész');
+};
